@@ -1,3 +1,5 @@
+// A template for the backend portion was provided to the class by Paul Cwik in order to facilitate an easier deployment to heroku and github.
+
 // Dependencies
 const express = require('express');
 const routes = require('./routes');
