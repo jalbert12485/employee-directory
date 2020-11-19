@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
-
+// css for image
 const styles={
   img: {
     width: "100%",
     height: "auto"
   }
 }
-
+// Takes information from employee list and renders it nicely, including a picture (only 2 pictures to choose from, one male one female) give the full name (first middle initial last), email, location and time at company.
 function FriendCard(props) {
   return (
     <div className="row m-2">

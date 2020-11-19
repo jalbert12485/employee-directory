@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import EmployeeCard from "../EmployeeCard";
-
+// css for page
 const styles = {
   h1:{
     textAlign: "center",
@@ -20,11 +20,13 @@ const styles = {
   }
 };
 
+// creates the content that will be rendered in App.js
 function EmployeeList(props) {
   return (
     <React.Fragment>
+      {/* Title */}
       <h1 style={styles.h1}> List of Employees</h1>
-
+    {/* Dropdown selector for the location of workers */}
     <div className="row">
       <div className="col-lg-2 col-sm-0"></div>
     <div className="form-group col-lg-4 col-md-6 col-sm-12">
@@ -37,6 +39,7 @@ function EmployeeList(props) {
       <option value="Northeast">Northeast</option>
     </select>
   </div>
+  {/* Drop down menu for sort options */}
   <div className="form-group col-lg-4 col-md-6 col-sm-12">
     <label >Sort Employees By</label>
     <select className="form-control" id="sort" onChange={e => props.sortChange(e.target.value)}>
@@ -48,7 +51,7 @@ function EmployeeList(props) {
   </div>
   <div className="col-md-2 col-sm-0"></div>
   </div>
-
+      {/* Creates a list (unstyled) and send information to EmployeeCard in order to render each card. */}
       <ul className="list-unstyled ml-2 mr-2">
         {props.employees.map(employee =>
           <li style={styles.li}><EmployeeCard employee={employee} /></li>

@@ -19,12 +19,16 @@ const styles = {
   }
 };
 
+// Our main background output
+
 class App extends Component {
+  // Takes input from employees.json file and allows us to change it without having to reaccess data.
   state = {
     "employees": employees,
     "filteredEmployees": employees
   };
 
+  // Filters the data so that only employs that work in a given location are shown.
   handleLocationChange= location=>{
     let array=[];
     if(location !== "all"){
@@ -35,6 +39,7 @@ class App extends Component {
     this.setState({ filteredEmployees: array });
   }
 
+  // Sorts data by the option chosen by the user.
   handleSortChange= sortOption => {
     let array=[];
     array=this.state.filteredEmployees.sort((a, b) => {
@@ -51,6 +56,7 @@ class App extends Component {
     this.setState({filteredEmployees: array});
   }
 
+  // Send data to EmployeeList to be rendered, then renders final results.
   render() {
     return (
       <div className="container p-4 mr-auto ml-auto" style={styles.container}>
